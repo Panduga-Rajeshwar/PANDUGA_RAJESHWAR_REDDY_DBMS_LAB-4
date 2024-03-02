@@ -1,3 +1,5 @@
+2) You are required to develop SQL based programs (Queries) to facilitate the Admin team of the E-Commerce company to retrieve the 
+data in summarized format - The Data Retrieval needs are described below.
 /*-----------------QUERIES TO FACILITATE THE ADMIN TEAM*/
 
 4) Display the total number of customers based on gender who have placed individual orders of worth at least Rs.3000.
