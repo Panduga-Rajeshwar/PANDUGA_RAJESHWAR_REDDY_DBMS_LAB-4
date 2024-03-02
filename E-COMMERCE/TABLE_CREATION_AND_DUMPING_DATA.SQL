@@ -1,3 +1,5 @@
+1) You are required to create tables for supplier,customer,category,product,supplier_pricing,order,rating to store the data for the E-commerce with the schema definition given below.
+/*------------------CREATING E-COMMERCE DATABASE, CREATING TABLES WITH THE SCHEMA GIVEN AND DUMPING THE DATA INTO THE TABLES*/
 CREATE DATABASE LAB_4_DBMS;
 USE LAB_4_DBMS;
 
@@ -56,7 +58,9 @@ CREATE TABLE rating(
                 ORD_ID INT,
                 FOREIGN KEY (ORD_ID) REFERENCES orders(ORD_ID),
                 RAT_RATSTARS INT NOT NULL);
-                
+
+
+3) Insert the following data in the table created above
 /*-------------------------inserting values to the tables-------------*/
 
 /*------SUPPLIER TABLE*/
