@@ -3,14 +3,14 @@ USE LAB_4_DBMS;
 
 /*----------------------CREATING TABLE SUPPLIER------------*/
 CREATE TABLE supplier(
-					SUPP_ID INT primary KEY,
+		    SUPP_ID INT primary KEY,
                     SUPP_NAME VARCHAR(50) NOT NULL,
                     SUPP_CITY VARCHAR(50) NOT NULL,
                     SUPP_PHONE VARCHAR(50) NOT NULL);
 
 /*--------------CREATING CUSTOMER TABLE---------------*/
 CREATE TABLE customer(
-					CUS_ID INT PRIMARY KEY,
+		    CUS_ID INT PRIMARY KEY,
                     CUS_NAME VARCHAR(20) NOT NULL,
                     CUS_PHONE VARCHAR(10) NOT NULL,
                     CUS_CITY VARCHAR(30) NOT NULL,
@@ -19,21 +19,21 @@ CREATE TABLE customer(
 
 /*--------------CREATING CATEGORY TABLE----------------------------*/
 CREATE TABLE category(
-					CAT_ID INT PRIMARY KEY,
+	  CAT_ID INT PRIMARY KEY,
           CAT_NAME VARCHAR(20) NOT NULL);
                     
 
 /*--------------------CREATING PRODUCT TABLE----------------------*/
 CREATE TABLE product(
-					PRO_ID INT PRIMARY KEY,
+		    PRO_ID INT PRIMARY KEY,
                     PRO_NAME VARCHAR(20) NOT NULL DEFAULT 'Dummy',
-					PRO_DESC VARCHAR(60),
+		    PRO_DESC VARCHAR(60),
                     CAT_ID INT,
                     FOREIGN KEY (CAT_ID) REFERENCES category(CAT_ID));
                     
 /*------------------CREATING SUPPLIER_PRICING TABLE----------------*/
 CREATE TABLE supplier_pricing(
-							PRICING_ID INT PRIMARY KEY,
+			    PRICING_ID INT PRIMARY KEY,
                             PRO_ID INT,
                             FOREIGN KEY (PRO_ID) REFERENCES product(PRO_ID),
                             SUPP_ID INT,
@@ -42,7 +42,7 @@ CREATE TABLE supplier_pricing(
                             
 /*-----------------------CREATING ORDER TABLE------------------------*/
 CREATE TABLE orders(
-				ORD_ID INT PRIMARY KEY,
+		ORD_ID INT PRIMARY KEY,
                 ORD_AMOUNT INT NOT NULL,
                 ORD_DATE DATE NOT NULL,
                 CUS_ID INT,
@@ -52,7 +52,7 @@ CREATE TABLE orders(
                 
 /*-------------------------CREATING RATING TABLE---------------------*/
 CREATE TABLE rating(
-				RAT_ID INT PRIMARY KEY,
+		RAT_ID INT PRIMARY KEY,
                 ORD_ID INT,
                 FOREIGN KEY (ORD_ID) REFERENCES orders(ORD_ID),
                 RAT_RATSTARS INT NOT NULL);
